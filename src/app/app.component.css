@@ -1,0 +1,12 @@
+p {
+  font-family: Lato;
+}
+
+h3 {
+  text-align: center;
+}
+
+.pokemon {
+  height: 70px; 
+  background: fuchsia
+}

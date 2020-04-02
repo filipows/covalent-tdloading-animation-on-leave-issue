@@ -1,0 +1,33 @@
+<h3>Problem with `tdLoading` and animation `on leave` reproduction:</h3>
+
+<div layout="row" layout-align="center center" class="push-bottom">
+  <button mat-stroked-button color="primary" (click)="add()">Add pokemon</button>
+  <button mat-stroked-button color="warn" (click)="remove()">Remove pokemon</button>
+</div>
+
+<div layout="row" layout-align="space-between start">
+
+	<div flex="45">
+		<h3>With tdLoading</h3>
+		<div *ngFor="let pokemon of pokemons" @fadeInOnEnterFadeOutOnLeave class="push-bottom-sm">
+			<ng-template tdLoading [tdLoadingUntil]="!pokemon.loading" tdLoadingStrategy="overlay" tdLoadingMode="indeterminate"
+				tdLoadingType="linear">
+				<div class="pokemon" layout="row" layout-align="center center">
+					{{pokemon.name}}
+				</div>
+			</ng-template>
+		</div>
+	</div>
+
+	<div flex="45">
+		<h3>Without tdLoading</h3>
+		<div *ngFor="let pokemon of pokemons" @fadeInOnEnterFadeOutOnLeave class="push-bottom-sm">
+			<div class="pokemon" layout="row" layout-align="center center">
+				{{pokemon.name}} 
+		</div>
+	</div>
+
+</div>
+
+
+
